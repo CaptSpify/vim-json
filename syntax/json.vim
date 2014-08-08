@@ -68,7 +68,7 @@ if (!exists("g:vim_json_warnings") || g:vim_json_warnings==1)
 	syn match   jsonTrailingCommaError  ",\_s*[}\]]"
 
 	" Syntax: Watch out for missing commas between elements
-	syn match   jsonMissingCommaError /\("\|\d\)\zs\_s\+\ze"/
+	syn match   jsonMissingCommaError /\("\|}\|\d\)\zs\_s\+\ze"/
 endif
 
 " ********************************************** END OF ERROR WARNINGS
@@ -85,10 +85,6 @@ syn keyword  jsonBooleanFalse false
 
 " Syntax: Null
 syn keyword  jsonNull      null
-
-" Syntax: Braces
-syn region  jsonFold matchgroup=jsonBraces start="{" end="}" transparent fold
-syn region  jsonFold matchgroup=jsonBraces start="\[" end="]" transparent fold
 
 " Define the default highlighting.
 " For version 5.7 and earlier: only when not done already
